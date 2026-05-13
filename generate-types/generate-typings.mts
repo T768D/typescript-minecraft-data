@@ -68,7 +68,7 @@ export function generateTypes(
 
 		if (type === "native") {
 			if (name in baseTypes)
-				typesOutput += `type ${name} = ${baseTypes[name]};\n`;
+				typesOutput += `type ${name} = ${baseTypes[name as keyof typeof baseTypes]};\n`;
 			else
 				unhandledType(name, type, "Invalid type when type is native");
 		}

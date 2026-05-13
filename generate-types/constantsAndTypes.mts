@@ -58,4 +58,4 @@ export const baseTypes = {
 	registryEntryHolder: "unknown",
 	registryEntryHolderSet: "unknown[]",
 	lpVec3: "{ x: number; y: number; z: number }"
-} as Record<string, string>;
+} as const;

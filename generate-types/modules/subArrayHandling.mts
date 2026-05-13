@@ -268,13 +268,14 @@ function subArrayHandlingHelper(
 			unhandledType(subTypeData, "subTypeData is not a valid bitfield! Unable to generate comment!");
 			return {
 				comment: ["/** Unable to generate bitfield comment from data */"],
-				value: "number",
+				value: subTypeType,
 			};
 		}
 
 		return {
 			comment: getBitFieldMsg(subTypeData),
-			value: "number"
+			// bitfield is one of the base types so already defined
+			value: subTypeType
 		};
 	}
 
@@ -287,7 +288,8 @@ function subArrayHandlingHelper(
 			unhandledType(subTypeData, "subTypeData is not valid bitflags");
 			return {
 				comment: ["/** Unable to generate bitflags from data */"],
-				value: "number"
+				// bitflags is one of the base types so already defined
+				value: subTypeType
 			};
 		}
 
