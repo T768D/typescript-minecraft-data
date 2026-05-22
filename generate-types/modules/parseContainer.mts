@@ -35,9 +35,15 @@ export function parseContainer(container: unknown[], containerName: string): str
 	let tempOutput = "{\n";
 	for (const dict of container) {
 
-		if (typeof dict !== "object" || !dict || !("type" in dict) || !("name" in dict) || typeof dict.name !== "string") {
-			console.error("Dict is not object type in parseContainer, dict parsing skipped", dict);
-			continue;
+		if (typeof dict !== "object" || !dict || !("type" in dict))
+			console.error("Dict is not valid type in parseContainer, dict parsing skipped", dict);
+
+		else if ("anon" in dict && dict.anon === true) {
+			// skip dict
+		}
+
+		else if (!("name" in dict) || typeof dict.name !== "string") {
+			console.error("Invalid name in dict in parseContainer, dict parsing skipped", dict);
 		}
 
 		else if (!dict.type) {
