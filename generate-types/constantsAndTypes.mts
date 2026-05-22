@@ -27,7 +27,7 @@ declare global {
 // switch cannot be a type, and void is already a ts type
 export const ignoredTypes = new Set(["switch", "void", "string"]);
 // No types in ignoredTypes should be present in someTypes
-export const baseTypes = {
+const baseTypes = {
 	varint: "number",
 	varlong: "bigint",
 	optvarint: "number | null",
@@ -59,3 +59,12 @@ export const baseTypes = {
 	registryEntryHolderSet: "unknown[]",
 	lpVec3: "{ x: number; y: number; z: number }"
 } as const;
+
+
+export function getBaseType(type: string) {
+	if (type in baseTypes)
+		return baseTypes[type as keyof typeof baseTypes];
+
+	console.warn("Unimplemented base type: ", type);
+	return "unknown";
+}

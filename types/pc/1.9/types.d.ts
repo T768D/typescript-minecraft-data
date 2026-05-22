@@ -41,7 +41,7 @@ interface slot {
  * y : 26-37 : true
  * z : 38-63 : true
 */
-type position = number;
+type position = bitfield;
 
 
 type entityMetadataItem = i8 | varint | f32 | string | slot | bool | position  | 

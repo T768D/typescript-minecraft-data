@@ -82,7 +82,7 @@ export interface packet_advancements {
      * show_toast : 30-30 : false
      * has_background_texture : 31-31 : false
     */
-    flags: number;
+    flags: bitfield;
     backgroundTexture: string | undefined ;
     xCord: f32;
     yCord: f32;
@@ -187,7 +187,7 @@ export interface packet_multi_block_change {
      * z : 22-43 : true
      * y : 44-63 : false
     */
-    chunkCoordinates: number;
+    chunkCoordinates: bitfield;
     notTrustEdges: bool;
     records: varlong[];
 }

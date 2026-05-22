@@ -92,7 +92,7 @@ export interface packet_advancements {
      * show_toast : 30-30 : false
      * has_background_texture : 31-31 : false
     */
-    flags: number;
+    flags: bitfield;
     backgroundTexture: string | undefined ;
     xCord: f32;
     yCord: f32;
@@ -170,7 +170,7 @@ export interface packet_declare_commands {
      * has_command : 5-5 : false
      * command_node_type : 6-7 : false
     */
-    flags: number;
+    flags: bitfield;
     children: varint[];
     redirectNode: varint | undefined ;
     extraNodeData: undefined | string  | 
@@ -186,7 +186,7 @@ export interface packet_declare_commands {
      * max_present : 6-6 : false
      * min_present : 7-7 : false
     */
-    flags: number;
+    flags: bitfield;
     min: f64 | undefined ;
     max: f64 | undefined ;
 } | 
@@ -198,7 +198,7 @@ export interface packet_declare_commands {
      * max_present : 6-6 : false
      * min_present : 7-7 : false
     */
-    flags: number;
+    flags: bitfield;
     min: f32 | undefined ;
     max: f32 | undefined ;
 } | 
@@ -210,7 +210,7 @@ export interface packet_declare_commands {
      * max_present : 6-6 : false
      * min_present : 7-7 : false
     */
-    flags: number;
+    flags: bitfield;
     min: i32 | undefined ;
     max: i32 | undefined ;
 } | 
@@ -222,7 +222,7 @@ export interface packet_declare_commands {
      * max_present : 6-6 : false
      * min_present : 7-7 : false
     */
-    flags: number;
+    flags: bitfield;
     min: i64 | undefined ;
     max: i64 | undefined ;
 };

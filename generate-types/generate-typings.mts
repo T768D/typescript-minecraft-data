@@ -1,5 +1,5 @@
 import { writeFileSync, rmSync, readdirSync, mkdirSync, readFileSync, existsSync } from "fs";
-import { ignoredTypes, baseTypes } from "./constantsAndTypes.mjs";
+import { ignoredTypes, getBaseType } from "./constantsAndTypes.mjs";
 
 import { clearData, hoistedEnums } from "./modules/parseEnum.mjs";
 import { subArrayHandling } from "./modules/subArrayHandling.mjs";
@@ -57,7 +57,7 @@ export function generateTypes(
 
 	let typesOutput = "";
 	function unhandledType(name: string, type: unknown, msg: string) {
-		console.error(msg + ". Unhandled type or data structure:", type);
+		console.error(msg + ". Unhandled type or data structure:", type, name);
 		typesOutput += `// Unhandled type when generating typescript declaration file. This type will default to unknown for type saftey\ntype ${name} = unknown;`;
 	}
 
@@ -66,14 +66,11 @@ export function generateTypes(
 		if (ignoredTypes.has(name))
 			continue;
 
-		if (type === "native") {
-			if (name in baseTypes)
-				typesOutput += `type ${name} = ${baseTypes[name as keyof typeof baseTypes]};\n`;
-			else
-				unhandledType(name, type, "Invalid type when type is native");
-		}
+		if (type === "native")
+			return getBaseType(type);
 
-		else if (Array.isArray(type)) {
+
+		if (Array.isArray(type)) {
 			if (type.length !== 2) {
 				unhandledType(name, type, "Invalid subarray length");
 				continue;
@@ -88,20 +85,16 @@ export function generateTypes(
 		}
 
 		// this must come after array check as arrays are object types too
-		else if (typeof type === "object") {
-			// pass item through this for loop again, extract this for loop to a function
-			console.error("unimplemented object");
-		}
+		else if (typeof type === "object") 
+			unhandledType(name, type, "dictionary passed when array or string expected");
 
 		// we assume that the type is already defined somewhere else
 		// eg type packet_spawn_position = RespawnData; where RespawnData is defined in the program alraedy
-		else if (!ignoredTypes.has(type) && typeof type === "string") {
+		else if (!ignoredTypes.has(type) && typeof type === "string") 
 			typesOutput += `type ${name} = ${type};\n`;
-		}
-
-		else {
+		
+		else 
 			unhandledType(name, type, "fallthrough");
-		}
 	}
 
 	writeFileSync(`${outDir}/${sectionNameHistory}.d.ts`, typesOutput.trim(), "utf8");

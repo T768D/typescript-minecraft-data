@@ -452,7 +452,7 @@ type ingredient = Slot[];
  * z : 26-51 : true
  * y : 52-63 : true
 */
-type position = number;
+type position = bitfield;
 
 
 interface packedChunkPos {
@@ -536,7 +536,7 @@ interface command_node {
      * has_command : 5-5 : false
      * command_node_type : 6-7 : false
     */
-    flags: number;
+    flags: bitfield;
     children: varint[];
     redirectNode: varint | undefined ;
     extraNodeData: undefined  | 
@@ -555,7 +555,7 @@ interface command_node {
      * max_present : 6-6 : false
      * min_present : 7-7 : false
     */
-    flags: number;
+    flags: bitfield;
     min: f32 | undefined ;
     max: f32 | undefined ;
 } | 
@@ -567,7 +567,7 @@ interface command_node {
      * max_present : 6-6 : false
      * min_present : 7-7 : false
     */
-    flags: number;
+    flags: bitfield;
     min: f64 | undefined ;
     max: f64 | undefined ;
 } | 
@@ -579,7 +579,7 @@ interface command_node {
      * max_present : 6-6 : false
      * min_present : 7-7 : false
     */
-    flags: number;
+    flags: bitfield;
     min: i32 | undefined ;
     max: i32 | undefined ;
 } | 
@@ -591,11 +591,11 @@ interface command_node {
      * max_present : 6-6 : false
      * min_present : 7-7 : false
     */
-    flags: number;
+    flags: bitfield;
     min: i64 | undefined ;
     max: i64 | undefined ;
 } | 
-command_node_extraNodeData_properties | number | number | {
+command_node_extraNodeData_properties | bitfield | bitfield | {
     min: i32;
 } | 
 {
