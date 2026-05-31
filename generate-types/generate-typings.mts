@@ -1,5 +1,5 @@
 import { writeFileSync, rmSync, readdirSync, mkdirSync, readFileSync, existsSync } from "fs";
-import { ignoredTypes, getBaseType } from "./constantsAndTypes.mjs";
+import { ignoredTypes, getBaseType, unimplementedBaseTypes } from "./constantsAndTypes.mjs";
 
 import { clearData, hoistedEnums } from "./modules/parseEnum.mjs";
 import { subArrayHandling } from "./modules/subArrayHandling.mjs";
@@ -99,3 +99,6 @@ export function generateTypes(
 
 	writeFileSync(`${outDir}/${sectionNameHistory}.d.ts`, typesOutput.trim(), "utf8");
 }
+
+
+console.log("Unimplemented base types: \n", [...unimplementedBaseTypes].join("\n").trim());

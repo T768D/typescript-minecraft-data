@@ -61,10 +61,12 @@ const baseTypes = {
 } as const;
 
 
+export const unimplementedBaseTypes = new Set<string>();
+
 export function getBaseType(type: string) {
 	if (type in baseTypes)
 		return baseTypes[type as keyof typeof baseTypes];
 
-	console.warn("Unimplemented base type: ", type);
+	unimplementedBaseTypes.add(type);
 	return "unknown";
 }
