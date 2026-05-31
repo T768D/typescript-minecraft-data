@@ -1,50 +1,33 @@
 {
-	"name": "minecraft-data",
-	"version": "3.110.0",
-	"author": "Romain Beaumont <romain.rom1@gmail.com>",
+	"name": "typescript-minecraft-data",
+	"description": "Provides type data for minecraft based on minecraft-data",
+	"version": "1.0",
+	"author": "T768D",
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:PrismarineJS/node-minecraft-data.git"
+		"url": "git@github.com:T768D/typescript-minecraft-data.git"
 	},
-	"main": "index.js",
+	"main": "generate-types/generate-typings.mts",
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"@types/node": "^25.7.0",
 		"eslint": "^10.3.0",
 		"globals": "^17.6.0",
-		"json-schema-to-typescript": "11.0.5",
 		"minecraft-data": ".",
 		"minecraft-packets": "^1.4.0",
-		"mocha": "^11.0.1",
-		"standard": "^17.0.0",
 		"typescript": "^6.0.3",
 		"typescript-eslint": "^8.59.3"
 	},
-	"bugs": {
-		"url": "https://github.com/PrismarineJS/node-minecraft-data/issues"
-	},
-	"description": "Provide easy access to minecraft data in node.js",
 	"keywords": [
 		"minecraft",
-		"data",
-		"node.js",
-		"bun"
+		"bun",
+		"typescript",
+		"typings"
 	],
-	"license": "MIT",
+	"license": "PolyForm-Noncommercial-1.0.0",
 	"scripts": {
-		"generate:types": "node typings/generate-typings.js",
-		"generate:data": "node ./bin/generate_data.js",
-		"test:types": "tsc typings/test-typings && node typings/test-typings.js",
-		"test": "npm run generate:types && npm run generate:data && npm run lint && npm run test:types && mocha",
-		"lint": "standard",
-		"prepare": "npm run generate:data && npm run generate:types",
-		"fix": "standard --fix"
+		"gentypes": "bun generate-types/generate-typings.mts",
+		"generatetypes": "bun generate-types/generate-typings.mts"
 	},
-	"standard": {
-		"ignore": [
-			"minecraft-data/**/*.js"
-		]
-	},
-	"tonicExampleFilename": "example.js",
-	"dependencies": {}
+	"dependencies": { }
 }
