@@ -1,36 +1,38 @@
-// Because enums cannot be nested within other types, they must all be hoisted
+export {};
 
-declare const enum packet_name {
+declare global {
+
+const enum packet_name {
 }
 
-declare const enum packet_name_2 {
+const enum packet_name_2 {
     "set_protocol" = 0x00,
     "legacy_server_list_ping" = 0xfe,
 }
 
-declare const enum packet_name_3 {
+const enum packet_name_3 {
     "server_info" = 0x00,
     "ping" = 0x01,
 }
 
-declare const enum packet_name_4 {
+const enum packet_name_4 {
     "ping_start" = 0x00,
     "ping" = 0x01,
 }
 
-declare const enum packet_name_5 {
+const enum packet_name_5 {
     "disconnect" = 0x00,
     "encryption_begin" = 0x01,
     "success" = 0x02,
     "compress" = 0x03,
 }
 
-declare const enum packet_name_6 {
+const enum packet_name_6 {
     "login_start" = 0x00,
     "encryption_begin" = 0x01,
 }
 
-declare const enum packet_player_info_action {
+const enum packet_player_info_action {
     "add_player" = 0,
     "update_game_mode" = 1,
     "update_latency" = 2,
@@ -38,7 +40,7 @@ declare const enum packet_player_info_action {
     "remove_player" = 4,
 }
 
-declare const enum packet_name_7 {
+const enum packet_name_7 {
     "keep_alive" = 0x00,
     "login" = 0x01,
     "chat" = 0x02,
@@ -115,7 +117,7 @@ declare const enum packet_name_7 {
     "update_entity_nbt" = 0x49,
 }
 
-declare const enum packet_name_8 {
+const enum packet_name_8 {
     "keep_alive" = 0x00,
     "chat" = 0x01,
     "use_entity" = 0x02,
@@ -144,3 +146,5 @@ declare const enum packet_name_8 {
     "resource_pack_receive" = 0x19,
 }
 
+
+}

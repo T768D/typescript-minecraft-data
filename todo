@@ -1,4 +1,4 @@
 - exporting emitted types to top level based on dataPaths.json
 - support for the worser version of minecraft
 - add comments for switch statements to know which type it is
-- make everything rely on baseTypes and allow people to vary how baseTypes are implemented
+- allow people to vary how baseTypes are implemented

@@ -1,11 +1,19 @@
-/** Enums cannot be inside interfaces and types, therefore must be hosted */
-export let hoistedEnums = "// Because enums cannot be nested within other types, they must all be hoisted\n\n";
+
+/*
+	Enums cannot be nested within other types, so they must all be hoisted
+	TypeScript mandates that top level declarations in .d.ts files must start with declare or export
+	Declare won't be inlined at compile time, export means its no longer ambient, so it must be put inside declare global
+*/
+
+export let hoistedEnums = "";
 const usedNames = new Map<string, number>();
 
 export function clearData() {
 	usedNames.clear();
-	hoistedEnums = "// Because enums cannot be nested within other types, they must all be hoisted\n\n";
+	hoistedEnums = `export {};\n\ndeclare global {\n\n`;
 }
+
+clearData();
 
 
 function cleanName(name: string): string {
@@ -34,7 +42,7 @@ function cleanName(name: string): string {
 export function parseEnum(name: string, type: object) {
 
 	name = cleanName(name);
-	hoistedEnums += `declare const enum ${name} {\n`;
+	hoistedEnums += `const enum ${name} {\n`;
 
 	// json cant have objects as keys so always assume its Record<string,unknown>
 	for (const [key, value] of Object.entries(type as Record<string, unknown>)) {
@@ -75,7 +83,7 @@ export function parseEnum(name: string, type: object) {
 export function parseBitflags(name: string, data: unknown[]) {
 
 	name = cleanName(name);
-	hoistedEnums += `declare const enum ${name} {\n`;
+	hoistedEnums += `const enum ${name} {\n`;
 
 	for (let shiftLevel = 0; shiftLevel < data.length; shiftLevel++) {
 		const item = data[shiftLevel];

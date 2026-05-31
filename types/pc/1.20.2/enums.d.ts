@@ -1,6 +1,8 @@
-// Because enums cannot be nested within other types, they must all be hoisted
+export {};
 
-declare const enum soundSource {
+declare global {
+
+const enum soundSource {
     "master" = 0,
     "music" = 1,
     "record" = 2,
@@ -13,7 +15,7 @@ declare const enum soundSource {
     "voice" = 9,
 }
 
-declare const enum command_node_extraNodeData_parser {
+const enum command_node_extraNodeData_parser {
     "brigadier:bool" = 0,
     "brigadier:float" = 1,
     "brigadier:double" = 2,
@@ -65,31 +67,31 @@ declare const enum command_node_extraNodeData_parser {
     "minecraft:uuid" = 48,
 }
 
-declare const enum command_node_extraNodeData_properties {
+const enum command_node_extraNodeData_properties {
     "SINGLE_WORD" = 0,
     "QUOTABLE_PHRASE" = 1,
     "GREEDY_PHRASE" = 2,
 }
 
-declare const enum packet_name {
+const enum packet_name {
 }
 
-declare const enum packet_name_2 {
+const enum packet_name_2 {
     "set_protocol" = 0x00,
     "legacy_server_list_ping" = 0xfe,
 }
 
-declare const enum packet_name_3 {
+const enum packet_name_3 {
     "server_info" = 0x00,
     "ping" = 0x01,
 }
 
-declare const enum packet_name_4 {
+const enum packet_name_4 {
     "ping_start" = 0x00,
     "ping" = 0x01,
 }
 
-declare const enum packet_name_5 {
+const enum packet_name_5 {
     "disconnect" = 0x00,
     "encryption_begin" = 0x01,
     "success" = 0x02,
@@ -97,14 +99,14 @@ declare const enum packet_name_5 {
     "login_plugin_request" = 0x04,
 }
 
-declare const enum packet_name_6 {
+const enum packet_name_6 {
     "login_start" = 0x00,
     "encryption_begin" = 0x01,
     "login_plugin_response" = 0x02,
     "login_acknowledged" = 0x03,
 }
 
-declare const enum packet_name_7 {
+const enum packet_name_7 {
     "custom_payload" = 0x00,
     "disconnect" = 0x01,
     "finish_configuration" = 0x02,
@@ -116,7 +118,7 @@ declare const enum packet_name_7 {
     "tags" = 0x08,
 }
 
-declare const enum packet_name_8 {
+const enum packet_name_8 {
     "settings" = 0x00,
     "custom_payload" = 0x01,
     "finish_configuration" = 0x02,
@@ -125,7 +127,7 @@ declare const enum packet_name_8 {
     "resource_pack_receive" = 0x05,
 }
 
-declare const enum packet_player_info_action_bitflags {
+const enum packet_player_info_action_bitflags {
     add_player = 1 << 0,
     initialize_chat = 1 << 1,
     update_game_mode = 1 << 2,
@@ -134,7 +136,7 @@ declare const enum packet_player_info_action_bitflags {
     update_display_name = 1 << 5,
 }
 
-declare const enum packet_name_9 {
+const enum packet_name_9 {
     "bundle_delimiter" = 0x00,
     "spawn_entity" = 0x01,
     "spawn_entity_experience_orb" = 0x02,
@@ -250,7 +252,7 @@ declare const enum packet_name_9 {
     "tags" = 0x70,
 }
 
-declare const enum packet_name_10 {
+const enum packet_name_10 {
     "teleport_confirm" = 0x00,
     "query_block_nbt" = 0x01,
     "set_difficulty" = 0x02,
@@ -307,3 +309,5 @@ declare const enum packet_name_10 {
     "use_item" = 0x35,
 }
 
+
+}

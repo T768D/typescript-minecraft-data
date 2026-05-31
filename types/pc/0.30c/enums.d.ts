@@ -1,13 +1,15 @@
-// Because enums cannot be nested within other types, they must all be hoisted
+export {};
 
-declare const enum packet_name {
+declare global {
+
+const enum packet_name {
     "player_identification" = 0x00,
     "set_block" = 0x05,
     "position" = 0x08,
     "message" = 0x0d,
 }
 
-declare const enum packet_name_2 {
+const enum packet_name_2 {
     "server_identification" = 0x00,
     "ping" = 0x01,
     "level_initialize" = 0x02,
@@ -25,3 +27,5 @@ declare const enum packet_name_2 {
     "update_user_type" = 0x0f,
 }
 
+
+}

@@ -30,7 +30,7 @@ for (const version of versionList) {
 	for (const [sectionName, data] of Object.entries(protocol))
 		generateTypes(sectionName, sectionName, data, `./types/pc/${version}`);
 
-	writeFileSync(`./types/pc/${version}/enums.d.ts`, hoistedEnums, "utf8");
+	writeFileSync(`./types/pc/${version}/enums.d.ts`, hoistedEnums + "\n}\n", "utf8");
 
 	// tsconfig required otherwise typescript decides it doesn't like it and starts saying types aren't found
 	writeFileSync(`./types/pc/${version}/tsconfig.json`, `{"include": [ "./**/*.d.ts" ]}`, "utf8");

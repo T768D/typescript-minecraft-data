@@ -1,6 +1,8 @@
-// Because enums cannot be nested within other types, they must all be hoisted
+export {};
 
-declare const enum SlotComponentType {
+declare global {
+
+const enum SlotComponentType {
     "custom_data" = 0,
     "max_stack_size" = 1,
     "max_damage" = 2,
@@ -70,20 +72,20 @@ declare const enum SlotComponentType {
     "container_loot" = 66,
 }
 
-declare const enum SlotComponent_data {
+const enum SlotComponent_data {
     "common" = 0,
     "uncommon" = 1,
     "rare" = 2,
     "epic" = 3,
 }
 
-declare const enum SlotComponent_data_attributes_operation {
+const enum SlotComponent_data_attributes_operation {
     "add" = 0,
     "multiply_base" = 1,
     "multiply_total" = 2,
 }
 
-declare const enum SlotComponent_data_attributes_slot {
+const enum SlotComponent_data_attributes_slot {
     "any" = 0,
     "main_hand" = 1,
     "off_hand" = 2,
@@ -96,7 +98,7 @@ declare const enum SlotComponent_data_attributes_slot {
     "body" = 9,
 }
 
-declare const enum SlotComponent_data_animation {
+const enum SlotComponent_data_animation {
     "none" = 0,
     "eat" = 1,
     "drink" = 2,
@@ -109,7 +111,7 @@ declare const enum SlotComponent_data_animation {
     "brush" = 9,
 }
 
-declare const enum SlotComponent_data_slot {
+const enum SlotComponent_data_slot {
     "main_hand" = 0,
     "off_hand" = 1,
     "feet" = 2,
@@ -119,7 +121,7 @@ declare const enum SlotComponent_data_slot {
     "body" = 6,
 }
 
-declare const enum ItemFireworkExplosion_shape {
+const enum ItemFireworkExplosion_shape {
     "small_ball" = 0,
     "large_ball" = 1,
     "star" = 2,
@@ -127,7 +129,7 @@ declare const enum ItemFireworkExplosion_shape {
     "burst" = 4,
 }
 
-declare const enum ItemConsumeEffect_type {
+const enum ItemConsumeEffect_type {
     "apply_effects" = 0,
     "remove_effects" = 1,
     "clear_all_effects" = 2,
@@ -135,7 +137,7 @@ declare const enum ItemConsumeEffect_type {
     "play_sound" = 4,
 }
 
-declare const enum Particle_type {
+const enum Particle_type {
     "angry_villager" = 0,
     "block" = 1,
     "block_marker" = 2,
@@ -250,12 +252,12 @@ declare const enum Particle_type {
     "block_crumble" = 111,
 }
 
-declare const enum Particle_data_positionType {
+const enum Particle_data_positionType {
     "block" = 0,
     "entity" = 1,
 }
 
-declare const enum soundSource {
+const enum soundSource {
     "master" = 0,
     "music" = 1,
     "record" = 2,
@@ -268,7 +270,7 @@ declare const enum soundSource {
     "voice" = 9,
 }
 
-declare const enum entityMetadataEntry_type {
+const enum entityMetadataEntry_type {
     "byte" = 0,
     "int" = 1,
     "long" = 2,
@@ -302,7 +304,7 @@ declare const enum entityMetadataEntry_type {
     "quaternion" = 30,
 }
 
-declare const enum command_node_extraNodeData_parser {
+const enum command_node_extraNodeData_parser {
     "brigadier:bool" = 0,
     "brigadier:float" = 1,
     "brigadier:double" = 2,
@@ -359,19 +361,19 @@ declare const enum command_node_extraNodeData_parser {
     "minecraft:uuid" = 53,
 }
 
-declare const enum command_node_extraNodeData_properties {
+const enum command_node_extraNodeData_properties {
     "SINGLE_WORD" = 0,
     "QUOTABLE_PHRASE" = 1,
     "GREEDY_PHRASE" = 2,
 }
 
-declare const enum packet_common_settings_particleStatus {
+const enum packet_common_settings_particleStatus {
     "all" = 0,
     "decreased" = 1,
     "minimal" = 2,
 }
 
-declare const enum ServerLinkType {
+const enum ServerLinkType {
     "bug_report" = 0,
     "community_guidelines" = 1,
     "support" = 2,
@@ -384,25 +386,25 @@ declare const enum ServerLinkType {
     "announcements" = 9,
 }
 
-declare const enum packet_name {
+const enum packet_name {
 }
 
-declare const enum packet_name_2 {
+const enum packet_name_2 {
     "set_protocol" = 0x00,
     "legacy_server_list_ping" = 0xfe,
 }
 
-declare const enum packet_name_3 {
+const enum packet_name_3 {
     "server_info" = 0x00,
     "ping" = 0x01,
 }
 
-declare const enum packet_name_4 {
+const enum packet_name_4 {
     "ping_start" = 0x00,
     "ping" = 0x01,
 }
 
-declare const enum packet_name_5 {
+const enum packet_name_5 {
     "disconnect" = 0x00,
     "encryption_begin" = 0x01,
     "success" = 0x02,
@@ -411,7 +413,7 @@ declare const enum packet_name_5 {
     "cookie_request" = 0x05,
 }
 
-declare const enum packet_name_6 {
+const enum packet_name_6 {
     "login_start" = 0x00,
     "encryption_begin" = 0x01,
     "login_plugin_response" = 0x02,
@@ -419,7 +421,7 @@ declare const enum packet_name_6 {
     "cookie_response" = 0x04,
 }
 
-declare const enum packet_name_7 {
+const enum packet_name_7 {
     "cookie_request" = 0x00,
     "custom_payload" = 0x01,
     "disconnect" = 0x02,
@@ -439,7 +441,7 @@ declare const enum packet_name_7 {
     "server_links" = 0x10,
 }
 
-declare const enum packet_name_8 {
+const enum packet_name_8 {
     "settings" = 0x00,
     "cookie_response" = 0x01,
     "custom_payload" = 0x02,
@@ -452,7 +454,7 @@ declare const enum packet_name_8 {
     "server_links" = 0x09,
 }
 
-declare const enum SlotDisplay_type {
+const enum SlotDisplay_type {
     "empty" = 0,
     "any_fuel" = 1,
     "item" = 2,
@@ -463,7 +465,7 @@ declare const enum SlotDisplay_type {
     "composite" = 7,
 }
 
-declare const enum RecipeDisplay_type {
+const enum RecipeDisplay_type {
     "crafting_shapeless" = 0,
     "crafting_shaped" = 1,
     "furnace" = 2,
@@ -471,20 +473,20 @@ declare const enum RecipeDisplay_type {
     "smithing" = 4,
 }
 
-declare const enum SpawnInfo_gamemode {
+const enum SpawnInfo_gamemode {
     "survival" = 0,
     "creative" = 1,
     "adventure" = 2,
     "spectator" = 3,
 }
 
-declare const enum ChatTypeParameterType {
+const enum ChatTypeParameterType {
     "content" = 0,
     "sender" = 1,
     "target" = 2,
 }
 
-declare const enum packet_player_info_action_bitflags {
+const enum packet_player_info_action_bitflags {
     add_player = 1 << 0,
     initialize_chat = 1 << 1,
     update_game_mode = 1 << 2,
@@ -495,7 +497,7 @@ declare const enum packet_player_info_action_bitflags {
     update_list_order = 1 << 7,
 }
 
-declare const enum PositionUpdateRelatives_bitflags {
+const enum PositionUpdateRelatives_bitflags {
     x = 1 << 0,
     y = 1 << 1,
     z = 1 << 2,
@@ -507,7 +509,7 @@ declare const enum PositionUpdateRelatives_bitflags {
     yawDelta = 1 << 8,
 }
 
-declare const enum packet_recipe_book_add_entries_recipe_category {
+const enum packet_recipe_book_add_entries_recipe_category {
     "crafting_building_blocks" = 0,
     "crafting_redstone" = 1,
     "crafting_equipment" = 2,
@@ -523,12 +525,12 @@ declare const enum packet_recipe_book_add_entries_recipe_category {
     "campfire" = 12,
 }
 
-declare const enum packet_recipe_book_add_entries_flags_bitflags {
+const enum packet_recipe_book_add_entries_flags_bitflags {
     notification = 1 << 0,
     highlight = 1 << 1,
 }
 
-declare const enum packet_entity_update_attributes_properties_key {
+const enum packet_entity_update_attributes_properties_key {
     "generic.armor" = 0,
     "generic.armor_toughness" = 1,
     "generic.attack_damage" = 2,
@@ -553,7 +555,7 @@ declare const enum packet_entity_update_attributes_properties_key {
     "generic.step_height" = 21,
 }
 
-declare const enum packet_name_9 {
+const enum packet_name_9 {
     "bundle_delimiter" = 0x00,
     "spawn_entity" = 0x01,
     "spawn_entity_experience_orb" = 0x02,
@@ -687,12 +689,12 @@ declare const enum packet_name_9 {
     "server_links" = 0x82,
 }
 
-declare const enum MovementFlags_bitflags {
+const enum MovementFlags_bitflags {
     onGround = 1 << 0,
     hasHorizontalCollision = 1 << 1,
 }
 
-declare const enum packet_player_input_inputs_bitflags {
+const enum packet_player_input_inputs_bitflags {
     forward = 1 << 0,
     backward = 1 << 1,
     left = 1 << 2,
@@ -702,7 +704,7 @@ declare const enum packet_player_input_inputs_bitflags {
     sprint = 1 << 6,
 }
 
-declare const enum packet_name_10 {
+const enum packet_name_10 {
     "teleport_confirm" = 0x00,
     "query_block_nbt" = 0x01,
     "select_bundle_item" = 0x02,
@@ -767,3 +769,5 @@ declare const enum packet_name_10 {
     "use_item" = 0x3d,
 }
 
+
+}
