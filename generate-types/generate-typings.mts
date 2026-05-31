@@ -66,10 +66,6 @@ export function generateTypes(
 		if (ignoredTypes.has(name))
 			continue;
 
-		if (type === "native")
-			return getBaseType(type);
-
-
 		if (Array.isArray(type)) {
 			if (type.length !== 2) {
 				unhandledType(name, type, "Invalid subarray length");
@@ -85,15 +81,15 @@ export function generateTypes(
 		}
 
 		// this must come after array check as arrays are object types too
-		else if (typeof type === "object") 
+		else if (typeof type === "object")
 			unhandledType(name, type, "dictionary passed when array or string expected");
 
 		// we assume that the type is already defined somewhere else
 		// eg type packet_spawn_position = RespawnData; where RespawnData is defined in the program alraedy
-		else if (!ignoredTypes.has(type) && typeof type === "string") 
-			typesOutput += `type ${name} = ${type};\n`;
-		
-		else 
+		else if (!ignoredTypes.has(type) && typeof type === "string")
+			typesOutput += `type ${name} = ${getBaseType(name)};\n`;
+
+		else
 			unhandledType(name, type, "fallthrough");
 	}
 

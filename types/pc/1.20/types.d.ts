@@ -1,6 +1,6 @@
 type varint = number;
 type varlong = bigint;
-type optvarint = varint;
+type optvarint = number | null;
 type pstring = string;
 type buffer = Buffer;
 type u8 = number;
@@ -23,9 +23,9 @@ type bitflags = number;
 type container = Record<string, unknown>;
 type array = unknown[];
 type restBuffer = Buffer;
-// Unhandled type when generating typescript declaration file. This type will default to unknown for type saftey
-type nbt = unknown;// Unhandled type when generating typescript declaration file. This type will default to unknown for type saftey
-type optionalNbt = unknown;type registryEntryHolder = unknown;
+type nbt = unknown;
+type optionalNbt = unknown;
+type registryEntryHolder = unknown;
 type registryEntryHolderSet = unknown[];
 type ByteArray = Buffer;
 
@@ -154,7 +154,7 @@ type entityMetadataItem = i8 | varint | varlong | f32 | string | slot | bool | p
 
 
 // Unimplemented value
-type entityMetadata = unknown;
+type entityMetadata = unknown[];
 
 
 interface minecraft_simple_recipe_format {

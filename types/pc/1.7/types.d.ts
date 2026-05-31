@@ -18,9 +18,9 @@ type bitflags = number;
 type container = Record<string, unknown>;
 type array = unknown[];
 type restBuffer = Buffer;
-// Unhandled type when generating typescript declaration file. This type will default to unknown for type saftey
-type nbt = unknown;// Unhandled type when generating typescript declaration file. This type will default to unknown for type saftey
-type compressedNbt = unknown;type ByteArray = Buffer;
+type nbt = unknown;
+type compressedNbt = unknown;
+type ByteArray = Buffer;
 
 
 interface vec3i16 {
@@ -65,4 +65,4 @@ type entityMetadataItem = i8 | i16 | i32 | f32 | string | slot  |
 
 
 // Unimplemented value
-type entityMetadata = unknown;
+type entityMetadata = unknown[];

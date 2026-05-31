@@ -772,7 +772,7 @@ export interface packet_entity_velocity {
 export interface packet_entity_equipment {
     entityId: varint;
     // Unimplemented value
-    equipments: unknown;
+    equipments: unknown[];
 }
 
 export interface packet_experience {

@@ -1,5 +1,6 @@
 import { parseBitflags, parseEnum } from "./parseEnum.mjs";
 import { parseContainer } from "./parseContainer.mjs";
+import { getBaseType } from "../constantsAndTypes.mjs";
 
 
 const unhandledTypeInfo = "// Unhandled type when generating typescript declaration file. This type will default to unknown for type saftey\n";
@@ -318,9 +319,9 @@ function subArrayHandlingHelper(
 	}
 
 
-	console.error(`Unimplemented!\n realType: ${subTypeType}\n value: `, subTypeData);
+	// console.error(`Unimplemented!\n realType: ${subTypeType}\n value: `, subTypeData);
 	return {
 		comment: ["// Unimplemented value"],
-		value: "unknown"
+		value: getBaseType(subTypeType)
 	};
 }

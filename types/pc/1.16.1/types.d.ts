@@ -1,6 +1,6 @@
 type varint = number;
 type varlong = bigint;
-type optvarint = varint;
+type optvarint = number | null;
 type pstring = string;
 type u16 = number;
 type u8 = number;
@@ -21,9 +21,9 @@ type bitflags = number;
 type container = Record<string, unknown>;
 type array = unknown[];
 type restBuffer = Buffer;
-// Unhandled type when generating typescript declaration file. This type will default to unknown for type saftey
-type nbt = unknown;// Unhandled type when generating typescript declaration file. This type will default to unknown for type saftey
-type optionalNbt = unknown;type ByteArray = Buffer;
+type nbt = unknown;
+type optionalNbt = unknown;
+type ByteArray = Buffer;
 
 
 interface vec3i16 {
@@ -86,7 +86,7 @@ type entityMetadataItem = i8 | varint | f32 | string | slot | bool | position | 
 
 
 // Unimplemented value
-type entityMetadata = unknown;
+type entityMetadata = unknown[];
 
 
 interface minecraft_smelting_format {

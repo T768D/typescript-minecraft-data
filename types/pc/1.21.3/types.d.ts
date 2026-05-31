@@ -1,6 +1,6 @@
 type varint = number;
 type varlong = bigint;
-type optvarint = varint;
+type optvarint = number | null;
 type pstring = string;
 type buffer = Buffer;
 type u8 = number;
@@ -61,10 +61,10 @@ interface vec3i16 {
 }
 
 // Unimplemented value
-type IDSet = unknown;
+type IDSet = unknown[];
 
 
-type ContainerID = varint;
+type ContainerID = unknown;
 interface SlotComponent {
     type: SlotComponentType;
     data: anonymousNbt | varint | bool | string | undefined | Slot | i32 | ItemFireworkExplosion  | anonOptionalNbt[] | SlotComponent_data | 
@@ -281,7 +281,7 @@ interface ItemBlockProperty {
 }
 
 interface ItemBlockPredicate {
-    blockSet?: unknown;
+    blockSet?: unknown[];
     properties?: ItemBlockProperty[];
     nbt: anonOptionalNbt;
 }
@@ -434,7 +434,7 @@ interface EntityMetadataWolfVariant {
 }
 
 // Unimplemented value
-type entityMetadata = unknown;
+type entityMetadata = unknown[];
 
 
 type tags = {

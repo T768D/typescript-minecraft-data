@@ -1,6 +1,6 @@
 type varint = number;
 type varlong = bigint;
-type optvarint = varint;
+type optvarint = number | null;
 type pstring = string;
 type buffer = Buffer;
 type u8 = number;
@@ -56,10 +56,10 @@ interface vec3i16 {
 }
 
 // Unimplemented value
-type IDSet = unknown;
+type IDSet = unknown[];
 
 
-type ContainerID = u8;
+type ContainerID = unknown;
 interface SlotComponent {
     type: SlotComponentType;
     data: anonymousNbt | varint | bool | undefined | i32 | ItemFireworkExplosion | string  | anonOptionalNbt[] | SlotComponent_data | 
@@ -245,7 +245,7 @@ interface ItemBlockProperty {
 }
 
 interface ItemBlockPredicate {
-    blockSet?: unknown;
+    blockSet?: unknown[];
     properties?: ItemBlockProperty[];
     nbt: anonOptionalNbt;
 }
@@ -384,7 +384,7 @@ interface EntityMetadataWolfVariant {
 }
 
 // Unimplemented value
-type entityMetadata = unknown;
+type entityMetadata = unknown[];
 
 
 interface minecraft_simple_recipe_format {

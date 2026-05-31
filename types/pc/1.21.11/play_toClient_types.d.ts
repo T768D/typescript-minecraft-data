@@ -777,7 +777,7 @@ export interface packet_set_cursor_item {
     contents: Slot;
 }
 
-type packet_spawn_position = RespawnData;
+type packet_spawn_position = unknown;
 export interface packet_scoreboard_display_objective {
     position: varint;
     name: string;
@@ -801,7 +801,7 @@ export interface packet_entity_velocity {
 export interface packet_entity_equipment {
     entityId: varint;
     // Unimplemented value
-    equipments: unknown;
+    equipments: unknown[];
 }
 
 export interface packet_experience {

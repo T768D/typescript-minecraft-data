@@ -1,6 +1,6 @@
 type varint = number;
 type varlong = bigint;
-type optvarint = varint;
+type optvarint = number | null;
 type pstring = string;
 type buffer = Buffer;
 type u8 = number;
@@ -152,7 +152,7 @@ type entityMetadataItem = i8 | varint | varlong | f32 | string | anonymousNbt | 
 
 
 // Unimplemented value
-type entityMetadata = unknown;
+type entityMetadata = unknown[];
 
 
 interface minecraft_simple_recipe_format {
