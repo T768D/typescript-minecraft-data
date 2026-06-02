@@ -17,9 +17,8 @@ declare global {
 		includes(searchElement: unknown, fromIndex?: number): searchElement is T;
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	interface Set<T> {
-		has(value: unknown): boolean;
+		has(value: unknown): value is T;
 	}
 }
 
