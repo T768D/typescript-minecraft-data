@@ -48,8 +48,12 @@ export function generateTypes(
 ): string | void {
 
 	if (sectionName !== "types") {
-		for (const [subSectionName, subData] of Object.entries(data))
-			generateTypes(`${sectionNameHistory}_${subSectionName}`, subSectionName, subData, outDir);
+		for (const [subSectionName, subData] of Object.entries(data)) {
+			if (subSectionName === "types")
+				generateTypes(sectionNameHistory, subSectionName, subData, outDir);
+			else
+				generateTypes(`${sectionNameHistory}_${subSectionName}`, subSectionName, subData, outDir);
+		}
 
 		return;
 	}

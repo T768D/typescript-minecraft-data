@@ -2,3 +2,4 @@
 - support for the worser version of minecraft
 - add comments for switch statements to know which type it is
 - allow people to vary how baseTypes are implemented
+- make enums next to the top level types instead of grouping them into a enums file
