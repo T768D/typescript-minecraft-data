@@ -1,3 +1,5 @@
+Currently very much a work in progress
+
 This takes types from minecraft-data and converts them into typescript definitions
 
 Type definitions are organised by folders and files
