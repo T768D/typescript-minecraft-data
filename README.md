@@ -1,4 +1,5 @@
 Currently very much a work in progress
+As of 13th Oct 2026 I don't currently have time to continue this, however I do want to resume work in the future
 
 This takes types from minecraft-data and converts them into typescript definitions
 
